@@ -1,4 +1,4 @@
 import { getMonthlyContribution } from './monthly';
-import { getKWSPProjectile } from './projectile';
+import { getKWSPProjection } from './projection';
 
-export { getMonthlyContribution, getKWSPProjectile };
+export { getMonthlyContribution, getKWSPProjection };

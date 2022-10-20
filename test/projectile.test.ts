@@ -1,9 +1,9 @@
-import { getKWSPProjectile } from '../src/projectile';
+import { getKWSPProjection } from '../src/projection';
 
 describe('getKWSPProjectile', () => {
   it('invalid projectile', () => {
     expect(() =>
-      getKWSPProjectile({
+      getKWSPProjection({
         monthlySalary: -1000,
         annualSalaryIncrementPercentage: 0,
         kwspAnnualInterest: 6,
@@ -16,7 +16,7 @@ describe('getKWSPProjectile', () => {
     ).toThrowError("Monthly salary can't less than or equal to 0");
 
     expect(() =>
-      getKWSPProjectile({
+      getKWSPProjection({
         monthlySalary: 3000,
         annualSalaryIncrementPercentage: -10,
         kwspAnnualInterest: 6,
@@ -30,7 +30,7 @@ describe('getKWSPProjectile', () => {
       'annualSalaryIncrementPercentage must be a valid percentage'
     );
     expect(() =>
-      getKWSPProjectile({
+      getKWSPProjection({
         monthlySalary: 3000,
         annualSalaryIncrementPercentage: 101,
         kwspAnnualInterest: 6,
@@ -45,7 +45,7 @@ describe('getKWSPProjectile', () => {
     );
 
     expect(() =>
-      getKWSPProjectile({
+      getKWSPProjection({
         monthlySalary: 3000,
         annualSalaryIncrementPercentage: 30,
         kwspAnnualInterest: -10,
@@ -58,7 +58,7 @@ describe('getKWSPProjectile', () => {
     ).toThrowError('kwspAnnualInterest must be a valid percentage');
 
     expect(() =>
-      getKWSPProjectile({
+      getKWSPProjection({
         monthlySalary: 3000,
         annualSalaryIncrementPercentage: 30,
         kwspAnnualInterest: 101,
@@ -71,7 +71,7 @@ describe('getKWSPProjectile', () => {
     ).toThrowError('kwspAnnualInterest must be a valid percentage');
 
     expect(() =>
-      getKWSPProjectile({
+      getKWSPProjection({
         monthlySalary: 3000,
         annualSalaryIncrementPercentage: 30,
         kwspAnnualInterest: 6,
@@ -84,7 +84,7 @@ describe('getKWSPProjectile', () => {
     ).toThrowError('employerRate must be a valid percentage');
 
     expect(() =>
-      getKWSPProjectile({
+      getKWSPProjection({
         monthlySalary: 3000,
         annualSalaryIncrementPercentage: 30,
         kwspAnnualInterest: 6,
@@ -97,7 +97,7 @@ describe('getKWSPProjectile', () => {
     ).toThrowError('employerRate must be a valid percentage');
 
     expect(() =>
-      getKWSPProjectile({
+      getKWSPProjection({
         monthlySalary: 3000,
         annualSalaryIncrementPercentage: 30,
         kwspAnnualInterest: 6,
@@ -110,7 +110,7 @@ describe('getKWSPProjectile', () => {
     ).toThrowError('workerRate must be a valid percentage');
 
     expect(() =>
-      getKWSPProjectile({
+      getKWSPProjection({
         monthlySalary: 3000,
         annualSalaryIncrementPercentage: 30,
         kwspAnnualInterest: 6,
@@ -124,7 +124,7 @@ describe('getKWSPProjectile', () => {
   });
 
   it('valid projectile within 1 year with 6% interest', () => {
-    const kwspProjectile = getKWSPProjectile({
+    const kwspProjectile = getKWSPProjection({
       monthlySalary: 3000,
       annualSalaryIncrementPercentage: 0,
       kwspAnnualInterest: 6,
@@ -147,7 +147,7 @@ describe('getKWSPProjectile', () => {
   });
 
   it('valid projectile 1 year and 1 month with 6% interest', () => {
-    const kwspProjectile = getKWSPProjectile({
+    const kwspProjectile = getKWSPProjection({
       monthlySalary: 3000,
       annualSalaryIncrementPercentage: 0,
       kwspAnnualInterest: 6,
@@ -158,6 +158,7 @@ describe('getKWSPProjectile', () => {
       to: new Date('2023-01-01'),
     });
 
+    console.log(kwspProjectile);
     expect(kwspProjectile.annual.length).toBe(2);
     expect(Math.round(kwspProjectile.totalAmount)).toEqual(57770);
     expect(Math.round(kwspProjectile.annual[0].year)).toEqual(2022);

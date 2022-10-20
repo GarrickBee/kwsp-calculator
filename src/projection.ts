@@ -1,6 +1,6 @@
 import { getDateDiffInMonth, isPercentage } from './util';
 
-export function getKWSPProjectile(param: {
+export function getKWSPProjection(param: {
   monthlySalary: number;
   annualSalaryIncrementPercentage: number;
   kwspAnnualInterest: number;
