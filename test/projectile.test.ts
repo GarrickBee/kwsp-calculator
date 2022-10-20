@@ -26,9 +26,7 @@ describe('getKWSPProjectile', () => {
         from: new Date('2022-01-01'),
         to: new Date('2022-01-01'),
       })
-    ).toThrowError(
-      'annualSalaryIncrementPercentage must be a valid percentage'
-    );
+    ).toThrowError('annualSalaryIncrementPercentage must be a valid percentage');
     expect(() =>
       getKWSPProjection({
         monthlySalary: 3000,
@@ -40,9 +38,7 @@ describe('getKWSPProjectile', () => {
         from: new Date('2022-01-01'),
         to: new Date('2022-01-01'),
       })
-    ).toThrowError(
-      'annualSalaryIncrementPercentage must be a valid percentage'
-    );
+    ).toThrowError('annualSalaryIncrementPercentage must be a valid percentage');
 
     expect(() =>
       getKWSPProjection({

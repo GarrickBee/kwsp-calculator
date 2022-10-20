@@ -12,17 +12,9 @@ describe('test isPercentage', () => {
 
 describe('test getDateDiffInMonth', () => {
   it('valid getDateDiffInMonth', () => {
-    expect(
-      getDateDiffInMonth(new Date('2022-01-01'), new Date('2022-02-01'))
-    ).toBe(1);
-    expect(
-      getDateDiffInMonth(new Date('2022-01-01'), new Date('2022-01-01'))
-    ).toBe(0);
-    expect(
-      getDateDiffInMonth(new Date('2022-01-01'), new Date('2021-12-01'))
-    ).toBe(-1);
-    expect(
-      getDateDiffInMonth(new Date('2022-01-01'), new Date('2023-01-01'))
-    ).toBe(12);
+    expect(getDateDiffInMonth(new Date('2022-01-01'), new Date('2022-02-01'))).toBe(1);
+    expect(getDateDiffInMonth(new Date('2022-01-01'), new Date('2022-01-01'))).toBe(0);
+    expect(getDateDiffInMonth(new Date('2022-01-01'), new Date('2021-12-01'))).toBe(-1);
+    expect(getDateDiffInMonth(new Date('2022-01-01'), new Date('2023-01-01'))).toBe(12);
   });
 });

@@ -14,9 +14,7 @@ export function getKWSPProjection(param: {
     throw new Error("Monthly salary can't less than or equal to 0");
   }
   if (!isPercentage(param.annualSalaryIncrementPercentage)) {
-    throw new Error(
-      'annualSalaryIncrementPercentage must be a valid percentage'
-    );
+    throw new Error('annualSalaryIncrementPercentage must be a valid percentage');
   }
   if (!isPercentage(param.kwspAnnualInterest)) {
     throw new Error('kwspAnnualInterest must be a valid percentage');
@@ -58,19 +56,14 @@ export function getKWSPProjection(param: {
   };
   let annualReport = output.annual[0];
 
-  for (
-    let cumMonth = currentMonth;
-    cumMonth <= totalMonths + currentMonth;
-    cumMonth++
-  ) {
+  for (let cumMonth = currentMonth; cumMonth <= totalMonths + currentMonth; cumMonth++) {
     const month = cumMonth % 12;
 
     if (month == 1 && pass1Year) {
       // Move current year to next year
       currentYear += 1;
       // Salary increment
-      monthlySalary +=
-        (monthlySalary * param.annualSalaryIncrementPercentage) / 100;
+      monthlySalary += (monthlySalary * param.annualSalaryIncrementPercentage) / 100;
 
       output.annual.push({
         year: currentYear,
@@ -89,8 +82,7 @@ export function getKWSPProjection(param: {
 
     // Calculate monthly amount
     const monthlyKwspAmount =
-      (monthlySalary * param.employerRate) / 100 +
-      (monthlySalary * param.workerRate) / 100;
+      (monthlySalary * param.employerRate) / 100 + (monthlySalary * param.workerRate) / 100;
     annualAmount += monthlyKwspAmount;
     projectKwspAmount += monthlyKwspAmount;
 
