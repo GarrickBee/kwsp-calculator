@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/GarrickBee/kwsp-calculator/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/GarrickBee/kwsp-calculator/actions/workflows/main.yml) [![Publish](https://github.com/GarrickBee/kwsp-calculator/actions/workflows/publish.yml/badge.svg)](https://github.com/GarrickBee/kwsp-calculator/actions/workflows/publish.yml)
 
+[NPM](https://www.npmjs.com/package/kwsp-calculator)
+
 Non-official Malaysia KWSP (Kumpulan Wang Simpanan Pekerja) or EPF (Employees Provident Fund) calculator.
 
 ## Getting Started
