@@ -71,10 +71,10 @@ main();
 ### Get KWSP Projection
 
 ```typescript
-import { getKWSPProjectile } from 'kwsp-calculator';
+import { getKWSPProjection } from 'kwsp-calculator';
 
 function main() {
-  const kwspProjection = getKWSPProjectile({
+  const kwspProjection = getKWSPProjection({
     monthlySalary: 3000,
     annualSalaryIncrementPercentage: 0,
     kwspAnnualInterest: 6,
@@ -85,7 +85,7 @@ function main() {
     to: new Date('2023-01-01'),
   });
 
-  console.log(kwspProjection);
+  console.log(getKWSPProjection);
 }
 
 main();

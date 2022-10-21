@@ -3,6 +3,12 @@
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "keywords": [
+    "kwsp",
+    "epf",
+    "calculator",
+    "finance"
+  ],
   "files": [
     "dist",
     "src"
