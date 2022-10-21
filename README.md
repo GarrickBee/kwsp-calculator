@@ -32,12 +32,12 @@ main();
 
 ```json
 {
-  "total": 630, // Total monthly kwsp
-  "worker": 330, // Amount contributed by worker
-  "employer": 300, // Amount contributed by employer
+  "total": 630,
+  "worker": 330,
+  "employer": 300,
   "rate": {
-    "worker": 11, // Worker rate in percentage
-    "employer": 10 // employer rate in percentage
+    "worker": 11,
+    "employer": 10
   }
 }
 ```
@@ -63,5 +63,38 @@ main();
   "worker": 270,
   "employer": 450,
   "rate": { "worker": 9, "employer": 15 }
+}
+```
+
+### Get KWSP Projection
+
+```typescript
+import { getKWSPProjectile } from 'kwsp-calculator';
+
+function main() {
+  const kwspProjection = getKWSPProjectile({
+    monthlySalary: 3000,
+    annualSalaryIncrementPercentage: 0,
+    kwspAnnualInterest: 6,
+    currentKwspAmount: 50000,
+    workerRate: 11,
+    employerRate: 0,
+    from: new Date('2022-01-01'),
+    to: new Date('2023-01-01'),
+  });
+
+  console.log(kwspProjection);
+}
+
+main();
+```
+
+```json
+{
+  "totalAmount": 57770.399307163374,
+  "annual": [
+    { "year": 2022, "amount": 3960, "dividendAmount": 3194.62617628195 },
+    { "year": 2023, "amount": 330, "dividendAmount": 285.7731308814098 }
+  ]
 }
 ```
